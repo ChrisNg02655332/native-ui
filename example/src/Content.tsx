@@ -1,4 +1,4 @@
-import { Divider, Image, Spacer, Text, useTheme } from 'native-ui'
+import { Badge, Divider, Image, Spacer, Text, useTheme } from 'native-ui'
 import React from 'react'
 import { View } from 'react-native'
 
@@ -26,6 +26,19 @@ export function Content() {
         <Spacer size={40} horizontal />
         <Text size="xs">Content</Text>
       </View>
+
+      <Badge
+        textStyle={{ color: colors.primary[600], fontSize: 16 }}
+        containerStyle={{
+          backgroundColor: colors.primary[50],
+          marginHorizontal: 60,
+          borderRadius: 999,
+        }}
+        badgeStyle={{
+          height: 32,
+        }}
+        value="Default"
+      />
     </View>
   )
 }
