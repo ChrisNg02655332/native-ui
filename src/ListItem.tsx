@@ -65,7 +65,7 @@ function ListItem({
   const { colors } = useTheme()
 
   return (
-    <Component {...rest} onPress={onPress} onLongPress={onLongPress} disabled={disabled}>
+    <Component testID="RNE__ListItem" {...rest} onPress={onPress} onLongPress={onLongPress} disabled={disabled}>
       <PadView
         Component={ViewComponent}
         style={StyleSheet.flatten([
@@ -107,7 +107,7 @@ function ListItemTitle({
 }) {
   return (
     <Text
-      testID="listItemTitle"
+      testID="RNE__ListItem__Title"
       style={StyleSheet.flatten([styles.title, right && styles.rightTitle, style])}
       size={size}
       {...rest}
@@ -121,7 +121,7 @@ function ListItemSubtitle({ style, children, ...props }: TextProps) {
   const { colors } = useTheme()
   return (
     <Text
-      testID="listItemSybTitle"
+      testID="RNE__ListItem__SubTitle"
       size="xs"
       style={StyleSheet.flatten([styles.subtitle, style])}
       color={colors.neutral[400]}
@@ -135,7 +135,7 @@ function ListItemSubtitle({ style, children, ...props }: TextProps) {
 function ListItemContent({ style, right, children, ...rest }: TextProps & { right?: boolean }) {
   const containerStyle = right ? styles.contentRightContainer : styles.contentContainer
   return (
-    <View style={StyleSheet.flatten([containerStyle, style])} {...rest}>
+    <View testID="RNE__ListItem__Content" style={StyleSheet.flatten([containerStyle, style])} {...rest}>
       {children}
     </View>
   )
@@ -145,7 +145,7 @@ function ListItemChevron({ style, color, ...rest }: Partial<IconProps>) {
   const { colors } = useTheme()
   return (
     <Icon
-      type="ico"
+      testID="RNE__ListItem__Chevron"
       name="chevron-right"
       color={color || colors.neutral[400]}
       style={StyleSheet.flatten([{ alignSelf: 'center' }, style])}
@@ -169,7 +169,7 @@ function PadView({
   const Container: any = Component || View
 
   return (
-    <Container {...rest} ref={_root}>
+    <Container testID="RNE__PadView" {...rest} ref={_root}>
       {React.Children.map(
         children,
         (child, index) => child && [child, index !== length - 1 && <View style={{ paddingLeft: pad }} />]
