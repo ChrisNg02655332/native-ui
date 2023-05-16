@@ -1,6 +1,8 @@
-import { Divider, Spacer, Text, useTheme } from 'native-ui'
+import { Divider, Image, Spacer, Text, useTheme } from 'native-ui'
 import React from 'react'
 import { View } from 'react-native'
+
+import TestImage from '../assets/icon.png'
 
 export function Content() {
   const { colors } = useTheme()
@@ -13,6 +15,7 @@ export function Content() {
       <Spacer size={18} />
       <Divider color={colors.danger[500]} width={5} subHeader="subHeader" insetType="middle" inset />
       <Text size="normal">Content</Text>
+      <Image source={TestImage} style={{ width: 100, height: 100 }} />
 
       <View style={{ flexDirection: 'row' }}>
         <Text color={colors.danger[200]} size="md">
