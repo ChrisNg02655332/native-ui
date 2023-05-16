@@ -87,6 +87,7 @@ export function Text({
 
   return (
     <RNText
+      testID="RNE__TEXT"
       style={StyleSheet.flatten([style, { ...styles[fontWeight], fontSize, color: color || colors.text }])}
       {...rest}
     >
