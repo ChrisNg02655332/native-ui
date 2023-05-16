@@ -14,4 +14,3 @@ export type IconType =
   | 'feather'
   | 'ant-design'
   | 'fontisto'
-  | 'ico'
