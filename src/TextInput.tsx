@@ -57,7 +57,7 @@ export const TextInput = React.forwardRef(
   ) => {
     const { colors } = useTheme()
     return (
-      <View testID="RNE__TEXT__CONTAINER" style={StyleSheet.flatten([styles.container, containerStyle])}>
+      <View testID="RNE__TEXT__INPUT__CONTAINER" style={StyleSheet.flatten([styles.container, containerStyle])}>
         {!!label && (
           <Text testID="RNE__TEXT__LABEL" {...labelProps}>
             {label} {required && <Text color={colors.danger[500]}>*</Text>}
@@ -65,7 +65,7 @@ export const TextInput = React.forwardRef(
         )}
 
         <View
-          testID="RNE__TEXT__INPUT__CONTAINER"
+          testID="RNE__INPUT__CONTAINER"
           style={StyleSheet.flatten([
             styles.inputContainer,
             { borderColor: error ? colors.danger[500] : colors.border },
