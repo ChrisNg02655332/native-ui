@@ -118,9 +118,17 @@ function Avatar({
 
   const PlaceholderContent =
     (renderPlaceholderContent && renderNode(undefined, renderPlaceholderContent)) ||
-    (title && <Text style={StyleSheet.flatten([styles.title, { fontSize: titleSize }, titleStyle])}>{title}</Text>) ||
+    (title && (
+      <Text
+        testID="RNE__Avatar__Placeholder__Title"
+        style={StyleSheet.flatten([styles.title, { fontSize: titleSize }, titleStyle])}
+      >
+        {title}
+      </Text>
+    )) ||
     (icon && (
       <Icon
+        testID="RNE__Avatar__Placeholder__Icon"
         style={StyleSheet.flatten([iconStyle && iconStyle])}
         color={icon.color || 'white'}
         name={icon.name || 'account'}
