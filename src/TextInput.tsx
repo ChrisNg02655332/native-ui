@@ -55,7 +55,7 @@ export const TextInput = React.forwardRef(
     }: TextInputProps,
     ref: any
   ) => {
-    const { colors } = useTheme()
+    const { colors, fontFamily } = useTheme()
     return (
       <View testID="RNE__TEXT__INPUT__CONTAINER" style={StyleSheet.flatten([styles.container, containerStyle])}>
         {!!label && (
@@ -83,7 +83,12 @@ export const TextInput = React.forwardRef(
           <RNTextInput
             testID="RNE__TEXT__INPUT"
             ref={ref}
-            style={StyleSheet.flatten([styles.input, { color: colors.text }, inputStyle, errorStyle])}
+            style={StyleSheet.flatten([
+              styles.input,
+              { color: colors.text, fontFamily: fontFamily?.regular },
+              inputStyle,
+              errorStyle,
+            ])}
             placeholderTextColor={colors.neutral[300]}
             underlineColorAndroid="transparent"
             {...props}
@@ -141,7 +146,6 @@ const styles = StyleSheet.create({
     flex: 1,
     height: Platform.OS === 'ios' ? 35 : 50,
     paddingBottom: Platform.OS === 'ios' ? 0 : 7,
-    fontFamily: 'Manrope',
   },
   iconContainer: {
     height: Platform.OS === 'ios' ? 35 : 50,
