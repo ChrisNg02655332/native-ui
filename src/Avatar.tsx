@@ -118,9 +118,17 @@ function Avatar({
 
   const PlaceholderContent =
     (renderPlaceholderContent && renderNode(undefined, renderPlaceholderContent)) ||
-    (title && <Text style={StyleSheet.flatten([styles.title, { fontSize: titleSize }, titleStyle])}>{title}</Text>) ||
+    (title && (
+      <Text
+        testID="RNE__Avatar__Placeholder__Title"
+        style={StyleSheet.flatten([styles.title, { fontSize: titleSize }, titleStyle])}
+      >
+        {title}
+      </Text>
+    )) ||
     (icon && (
       <Icon
+        testID="RNE__Avatar__Placeholder__Icon"
         style={StyleSheet.flatten([iconStyle && iconStyle])}
         color={icon.color || 'white'}
         name={icon.name || 'account'}
@@ -144,6 +152,7 @@ function Avatar({
 
   return (
     <Component
+      testID="RNE__Avatar__Container"
       style={StyleSheet.flatten([
         styles.container,
         { height, width },
@@ -198,6 +207,7 @@ function Accessory({
   }) {
   return (
     <Pressable
+      testID="RNE__Avatar__Accessory"
       {...{
         // android_ripple: (onPress || onLongPress) && androidRipple(underlayColor),
         ...pressableProps,
@@ -218,6 +228,7 @@ function Accessory({
       <View>
         {source ? (
           <Image
+            testID="RNE__Avatar__Accessory__Image"
             source={source}
             style={{
               width: size,
@@ -227,7 +238,14 @@ function Accessory({
             {...rest}
           />
         ) : (
-          <Icon name={name} type={type} color="#FFF" size={size * 0.8} {...rest} />
+          <Icon
+            testID="RNE__Avatar__Accessory__Icon"
+            name={name}
+            type={type}
+            color="#FFF"
+            size={size * 0.8}
+            {...rest}
+          />
         )}
       </View>
     </Pressable>
