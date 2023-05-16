@@ -1,6 +1,6 @@
-import { Spacer, Text, useTheme } from 'native-ui'
+import { Divider, Spacer, Text, useTheme } from 'native-ui'
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 
 export function Content() {
   const { colors } = useTheme()
@@ -11,19 +11,18 @@ export function Content() {
         Content
       </Text>
       <Spacer size={18} />
-      <Text>Space</Text>
+      <Divider color={colors.danger[500]} width={5} subHeader="subHeader" insetType="middle" inset />
+      <Text size="normal">Content</Text>
 
-      <View style={styles.row}>
+      <View style={{ flexDirection: 'row' }}>
         <Text color={colors.danger[200]} size="md">
-          Column 1
+          Content
         </Text>
-        <Spacer size={50} horizontal />
-        <Text size="lg">Column 2</Text>
+        <Divider inset color={colors.black} width={2} orientation="vertical" />
+        <Text size="lg">Content</Text>
+        <Spacer size={40} horizontal />
+        <Text size="xs">Content</Text>
       </View>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  row: { flexDirection: 'row' },
-})
