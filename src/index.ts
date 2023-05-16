@@ -1,3 +1,4 @@
+export * from './Badge'
 export * from './Divider'
 export * from './Image'
 export * from './Spacer'
