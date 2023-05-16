@@ -44,8 +44,6 @@ export function getIconStyle(type: IconType, extraProps: any) {
       return {}
     case 'fontisto':
       return {}
-    case 'ico':
-      return {}
     default:
       return {}
   }
@@ -91,6 +89,6 @@ export function getIconType(type: IconType) {
       if (Object.prototype.hasOwnProperty.call(customIcons, type)) {
         return customIcons[type]
       }
-      return require('react-native-vector-icons/MaterialIcons').default
+      return require('react-native-vector-icons/Feather').default
   }
 }
