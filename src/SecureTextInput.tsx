@@ -13,7 +13,6 @@ function SecureTextInput({ ...rest }: TextInputProps) {
     <TextInput
       secureTextEntry={hide}
       rightIcon={{
-        type: 'ico',
         name: !hide ? 'eye-off' : 'eye',
         color: colors.neutral[400],
         size: 18,

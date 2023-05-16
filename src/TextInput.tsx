@@ -57,14 +57,15 @@ export const TextInput = React.forwardRef(
   ) => {
     const { colors } = useTheme()
     return (
-      <View style={StyleSheet.flatten([styles.container, containerStyle])}>
+      <View testID="RNE__TEXT__CONTAINER" style={StyleSheet.flatten([styles.container, containerStyle])}>
         {!!label && (
-          <Text {...labelProps}>
+          <Text testID="RNE__TEXT__LABEL" {...labelProps}>
             {label} {required && <Text color={colors.danger[500]}>*</Text>}
           </Text>
         )}
 
         <View
+          testID="RNE__TEXT__INPUT__CONTAINER"
           style={StyleSheet.flatten([
             styles.inputContainer,
             { borderColor: error ? colors.danger[500] : colors.border },
@@ -72,11 +73,15 @@ export const TextInput = React.forwardRef(
           ])}
         >
           {leftIcon && (
-            <View style={StyleSheet.flatten([styles.iconContainer, leftIconContainerStyle])}>
-              <Icon {...leftIcon} />
+            <View
+              testID="RNE__TEXT__LEFTICON__CONTAINER"
+              style={StyleSheet.flatten([styles.iconContainer, leftIconContainerStyle])}
+            >
+              <Icon testID="RNE__TEXT__LEFTICON" {...leftIcon} />
             </View>
           )}
           <RNTextInput
+            testID="RNE__TEXT__INPUT"
             ref={ref}
             style={StyleSheet.flatten([styles.input, { color: colors.text }, inputStyle, errorStyle])}
             placeholderTextColor={colors.neutral[300]}
@@ -87,19 +92,30 @@ export const TextInput = React.forwardRef(
           {rightIcon &&
             (onPressRightIcon ? (
               <TouchableOpacity onPress={onPressRightIcon}>
-                <View style={StyleSheet.flatten([styles.iconContainer, rightIconContainerStyle])}>
-                  <Icon {...rightIcon} />
+                <View
+                  testID="RNE__TEXT__RIGHTICON__CONTAINER"
+                  style={StyleSheet.flatten([styles.iconContainer, rightIconContainerStyle])}
+                >
+                  <Icon testID="RNE__TEXT__RIGHTICON" {...rightIcon} />
                 </View>
               </TouchableOpacity>
             ) : (
-              <View style={StyleSheet.flatten([styles.iconContainer, rightIconContainerStyle])}>
-                <Icon {...rightIcon} />
+              <View
+                testID="RNE__TEXT__RIGHTICON__CONTAINER"
+                style={StyleSheet.flatten([styles.iconContainer, rightIconContainerStyle])}
+              >
+                <Icon testID="RNE__TEXT__RIGHTICON" {...rightIcon} />
               </View>
             ))}
         </View>
 
         {!!help && (
-          <Text color={error ? colors.danger[500] : colors.border} style={helpProps?.style} {...helpProps}>
+          <Text
+            testID="RNE__TEXT__HELP"
+            color={error ? colors.danger[500] : colors.border}
+            style={helpProps?.style}
+            {...helpProps}
+          >
             {help}
           </Text>
         )}
