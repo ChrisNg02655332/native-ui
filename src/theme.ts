@@ -31,6 +31,12 @@ export type Theme = {
     md: number
     lg: number
   }
+  avatarSizes: {
+    small: number
+    medium: number
+    large: number
+    xlarge: number
+  }
 }
 
 export const DefaultTheme: Theme = {
@@ -55,5 +61,11 @@ export const DefaultTheme: Theme = {
     normal: 18,
     md: 24,
     lg: 36,
+  },
+  avatarSizes: {
+    small: 34,
+    medium: 50,
+    large: 75,
+    xlarge: 150,
   },
 }

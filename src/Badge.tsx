@@ -27,7 +27,7 @@ type BadgeProps = {
    */
   Component?: typeof React.Component
 
-  /** Determines color of the indicator. */
+  /** Determines size of the indicator. */
   size?: 'xs' | 'sm' | 'normal' | 'md' | 'lg'
 } & InlinePressableProps
 
