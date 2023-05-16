@@ -144,6 +144,7 @@ function Avatar({
 
   return (
     <Component
+      testID="RNE__Avatar__Container"
       style={StyleSheet.flatten([
         styles.container,
         { height, width },
@@ -198,6 +199,7 @@ function Accessory({
   }) {
   return (
     <Pressable
+      testID="RNE__Avatar__Accessory"
       {...{
         // android_ripple: (onPress || onLongPress) && androidRipple(underlayColor),
         ...pressableProps,
@@ -218,6 +220,7 @@ function Accessory({
       <View>
         {source ? (
           <Image
+            testID="RNE__Avatar__Accessory__Image"
             source={source}
             style={{
               width: size,
@@ -227,7 +230,14 @@ function Accessory({
             {...rest}
           />
         ) : (
-          <Icon name={name} type={type} color="#FFF" size={size * 0.8} {...rest} />
+          <Icon
+            testID="RNE__Avatar__Accessory__Icon"
+            name={name}
+            type={type}
+            color="#FFF"
+            size={size * 0.8}
+            {...rest}
+          />
         )}
       </View>
     </Pressable>
