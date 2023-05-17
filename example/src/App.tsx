@@ -1,12 +1,12 @@
 import React from 'react'
 import { ThemeProvider, DefaultTheme, Theme, blue } from 'react-native-uikit'
-import { SafeAreaView, View } from 'react-native'
+import { Platform, SafeAreaView, View, StyleSheet } from 'react-native'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 
 import { Content } from './Content'
 
-const customeTheme: Theme = {
+const customTheme: Theme = {
   ...DefaultTheme,
   // fontSize: {
   //   sm: 12,
@@ -43,11 +43,15 @@ export default function App() {
 
   return (
     <View onLayout={onLayoutRootView}>
-      <ThemeProvider theme={customeTheme}>
-        <SafeAreaView>
+      <ThemeProvider theme={customTheme}>
+        <SafeAreaView style={styles.headerContainer}>
           <Content />
         </SafeAreaView>
       </ThemeProvider>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  headerContainer: { paddingTop: Platform.OS === 'android' ? 35 : 0 },
+})

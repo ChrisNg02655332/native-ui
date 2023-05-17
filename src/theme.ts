@@ -25,7 +25,17 @@ export type Theme = {
     semibold?: string
   }
   fontSize: {
+    xs: number
     sm: number
+    normal: number
+    md: number
+    lg: number
+  }
+  avatarSizes: {
+    small: number
+    medium: number
+    large: number
+    xlarge: number
   }
 }
 
@@ -46,6 +56,16 @@ export const DefaultTheme: Theme = {
     disabled: '#ccc',
   },
   fontSize: {
+    xs: 14,
     sm: 16,
+    normal: 18,
+    md: 24,
+    lg: 36,
+  },
+  avatarSizes: {
+    small: 34,
+    medium: 50,
+    large: 75,
+    xlarge: 150,
   },
 }

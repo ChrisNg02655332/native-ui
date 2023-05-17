@@ -1,3 +1,7 @@
+export * from './Badge'
+export * from './Divider'
+export * from './Image'
+export * from './Spacer'
 export * from './Text'
 
 export * from './colors'

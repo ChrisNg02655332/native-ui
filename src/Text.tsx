@@ -1,11 +1,6 @@
 import React from 'react'
-import {
-  Text as RNText,
-  TextProps as RNTextProps,
-  Dimensions,
-  Platform,
-  PixelRatio,
-} from 'react-native'
+import { StyleSheet } from 'react-native'
+import { Text as RNText, TextProps as RNTextProps, Dimensions, Platform, PixelRatio } from 'react-native'
 import { useTheme } from './context'
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window')
@@ -54,11 +49,25 @@ export function Text({
   let styles = { bold: {}, normal: {}, medium: {}, semibold: {} }
 
   let fontSize = 16
-  if (size === 'lg') fontSize = normalize(36)
-  if (size === 'md') fontSize = normalize(24)
-  if (size === 'normal') fontSize = normalize(18)
-  if (size === 'sm') fontSize = normalize(_fontSize?.sm)
-  if (size === 'xs') fontSize = normalize(14)
+
+  switch (size) {
+    case 'lg':
+      fontSize = normalize(_fontSize.lg)
+      break
+    case 'md':
+      fontSize = normalize(_fontSize.md)
+      break
+    case 'sm':
+      fontSize = normalize(_fontSize.sm)
+      break
+    case 'xs':
+      fontSize = normalize(_fontSize.xs)
+      break
+    default:
+      fontSize = normalize(_fontSize.normal)
+      break
+  }
+
   if (typeof size === 'number') fontSize = normalize(size)
 
   switch (fontWeight) {
@@ -78,11 +87,8 @@ export function Text({
 
   return (
     <RNText
-      style={Object.assign(style || {}, {
-        ...styles[fontWeight],
-        fontSize,
-        color: color || colors.text,
-      })}
+      testID="RNE__TEXT"
+      style={StyleSheet.flatten([style, { ...styles[fontWeight], fontSize, color: color || colors.text }])}
       {...rest}
     >
       {children}
