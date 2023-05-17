@@ -48,6 +48,7 @@
   },
   "homepage": "https://github.com/ChrisNg02655332/native-ui#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
