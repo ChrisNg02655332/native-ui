@@ -1,11 +1,4 @@
-import {
-  Badge,
-  Divider,
-  Image,
-  Spacer,
-  Text,
-  useTheme,
-} from 'react-native-uikit'
+import { Badge, Divider, Image, Spacer, Text, useTheme } from 'native-uikit'
 import React from 'react'
 import { View } from 'react-native'
 
