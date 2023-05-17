@@ -1,4 +1,4 @@
-import { Text, useTheme } from 'native-ui'
+import { Text, useTheme } from 'react-native-uikit'
 import React from 'react'
 import { View } from 'react-native'
 

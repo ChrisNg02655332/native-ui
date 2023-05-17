@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, DefaultTheme, Theme, blue } from 'native-ui'
+import { ThemeProvider, DefaultTheme, Theme, blue } from 'react-native-uikit'
 import { SafeAreaView, View } from 'react-native'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'

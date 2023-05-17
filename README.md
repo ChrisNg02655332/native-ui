@@ -1,17 +1,17 @@
-# native-ui
+# react-native-uikit
 
 The lightweigh libary support ui components for react-native
 
 ## Installation
 
 ```sh
-npm install native-ui
+npm install react-native-uikit
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'native-ui';
+import { multiply } from 'react-native-uikit';
 
 // ...
 

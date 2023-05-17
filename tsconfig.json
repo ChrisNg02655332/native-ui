@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "native-ui": ["./src/index"]
+      "react-native-uikit": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
