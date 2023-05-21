@@ -1,3 +1,4 @@
+import React from 'react'
 import { View } from 'react-native'
 
 import { TextInput as TextInputUI } from 'native-uikit'

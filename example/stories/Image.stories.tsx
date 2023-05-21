@@ -1,3 +1,4 @@
+import React from 'react'
 import { View } from 'react-native'
 
 import { Image as ImageUI, Text } from 'native-uikit'

@@ -1,3 +1,4 @@
+import React from 'react'
 import { View } from 'react-native'
 
 import { Spacer, Text as TextUI } from 'native-uikit'

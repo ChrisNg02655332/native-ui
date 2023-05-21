@@ -59,7 +59,6 @@ const getStories = () => {
     "./stories/Divider.stories.tsx": require("../stories/Divider.stories.tsx"),
     "./stories/Icon.stories.tsx": require("../stories/Icon.stories.tsx"),
     "./stories/Image.stories.tsx": require("../stories/Image.stories.tsx"),
-    "./stories/ListItem.stories.tsx": require("../stories/ListItem.stories.tsx"),
     "./stories/SecureTextInput.stories.tsx": require("../stories/SecureTextInput.stories.tsx"),
     "./stories/Text.stories.tsx": require("../stories/Text.stories.tsx"),
     "./stories/TextInput.stories.tsx": require("../stories/TextInput.stories.tsx"),

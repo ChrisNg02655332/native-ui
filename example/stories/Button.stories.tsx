@@ -1,3 +1,4 @@
+import React from 'react'
 import { View } from 'react-native'
 
 import { Button as ButtonUI } from 'native-uikit'
@@ -16,6 +17,9 @@ export default {
   args: {
     size: 'normal',
     title: 'Button',
+    loading: false,
+    type: 'solid',
+    disabled: false,
   },
 } as ComponentMeta<typeof ButtonUI>
 
