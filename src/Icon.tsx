@@ -15,6 +15,7 @@ import {
 
 import { useTheme } from './context'
 import { getIconStyle, getIconType, InlinePressableProps } from './helpers'
+import type { IconType } from './types'
 
 export { type IconProps, type IconObject, Icon }
 
