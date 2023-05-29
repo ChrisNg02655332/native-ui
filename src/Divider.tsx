@@ -1,5 +1,13 @@
 import React from 'react'
-import { View, StyleSheet, ViewProps, Text, StyleProp, TextStyle, ViewStyle } from 'react-native'
+import {
+  View,
+  StyleSheet,
+  ViewProps,
+  Text,
+  StyleProp,
+  TextStyle,
+  ViewStyle,
+} from 'react-native'
 import { useTheme } from './context'
 
 export { Divider, type DividerProps }
@@ -51,20 +59,37 @@ function Divider({
           styles.divider,
           style,
           inset &&
-          (insetType === 'left'
-            ? styles.leftInset
-            : insetType === 'right'
+            (insetType === 'left'
+              ? styles.leftInset
+              : insetType === 'right'
               ? styles.rightInset
               : { ...styles.leftInset, ...styles.rightInset }),
-          orientation === 'vertical' && { ...styles.vertical, borderRightColor: colors.border },
-          width ? (orientation === 'horizontal' ? { borderBottomWidth: width } : { borderRightWidth: width }) : null,
-          color ? (orientation === 'horizontal' ? { borderBottomColor: color } : { borderRightColor: color }) : null,
+          orientation === 'vertical' && {
+            ...styles.vertical,
+            borderRightColor: colors.border,
+          },
+          width
+            ? orientation === 'horizontal'
+              ? { borderBottomWidth: width }
+              : { borderRightWidth: width }
+            : null,
+          color
+            ? orientation === 'horizontal'
+              ? { borderBottomColor: color }
+              : { borderRightColor: color }
+            : null,
           { borderBottomColor: colors.border },
         ])}
         {...rest}
       />
       {subHeader && orientation === 'horizontal' ? (
-        <Text style={StyleSheet.flatten([styles.subHeader, subHeaderStyle, inset && styles.leftInset])}>
+        <Text
+          style={StyleSheet.flatten([
+            styles.subHeader,
+            subHeaderStyle,
+            inset && styles.leftInset,
+          ])}
+        >
           {subHeader}
         </Text>
       ) : null}

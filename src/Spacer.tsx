@@ -10,7 +10,13 @@ export function Spacer({ horizontal = false, size = 0 }: Props) {
   return (
     <View
       testID="RNE__Spacer"
-      style={size === 0 ? styles.container : !horizontal ? { height: size } : { width: size }}
+      style={
+        size === 0
+          ? styles.container
+          : !horizontal
+          ? { height: size }
+          : { width: size }
+      }
     />
   )
 }

@@ -8,7 +8,10 @@ type Inline<T, K extends keyof T> = Partial<
   } & Pick<T, K>
 >
 
-export type InlinePressableProps = Inline<PressableProps, 'onPress' | 'onLongPress' | 'onPressIn' | 'onPressOut'>
+export type InlinePressableProps = Inline<
+  PressableProps,
+  'onPress' | 'onLongPress' | 'onPressIn' | 'onPressOut'
+>
 
 export function getIconStyle(type: IconType, extraProps: any) {
   switch (type) {

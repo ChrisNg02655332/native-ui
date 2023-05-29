@@ -57,7 +57,10 @@ export const TextInput = React.forwardRef(
   ) => {
     const { colors, fontFamily } = useTheme()
     return (
-      <View testID="RNE__TEXT__INPUT__CONTAINER" style={StyleSheet.flatten([styles.container, containerStyle])}>
+      <View
+        testID="RNE__TEXT__INPUT__CONTAINER"
+        style={StyleSheet.flatten([styles.container, containerStyle])}
+      >
         {!!label && (
           <Text testID="RNE__TEXT__LABEL" {...labelProps}>
             {label} {required && <Text color={colors.danger[500]}>*</Text>}
@@ -75,7 +78,10 @@ export const TextInput = React.forwardRef(
           {leftIcon && (
             <View
               testID="RNE__TEXT__LEFTICON__CONTAINER"
-              style={StyleSheet.flatten([styles.iconContainer, leftIconContainerStyle])}
+              style={StyleSheet.flatten([
+                styles.iconContainer,
+                leftIconContainerStyle,
+              ])}
             >
               <Icon testID="RNE__TEXT__LEFTICON" {...leftIcon} />
             </View>
@@ -99,7 +105,10 @@ export const TextInput = React.forwardRef(
               <TouchableOpacity onPress={onPressRightIcon}>
                 <View
                   testID="RNE__TEXT__RIGHTICON__CONTAINER"
-                  style={StyleSheet.flatten([styles.iconContainer, rightIconContainerStyle])}
+                  style={StyleSheet.flatten([
+                    styles.iconContainer,
+                    rightIconContainerStyle,
+                  ])}
                 >
                   <Icon testID="RNE__TEXT__RIGHTICON" {...rightIcon} />
                 </View>
@@ -107,7 +116,10 @@ export const TextInput = React.forwardRef(
             ) : (
               <View
                 testID="RNE__TEXT__RIGHTICON__CONTAINER"
-                style={StyleSheet.flatten([styles.iconContainer, rightIconContainerStyle])}
+                style={StyleSheet.flatten([
+                  styles.iconContainer,
+                  rightIconContainerStyle,
+                ])}
               >
                 <Icon testID="RNE__TEXT__RIGHTICON" {...rightIcon} />
               </View>

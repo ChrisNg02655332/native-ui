@@ -65,7 +65,13 @@ function ListItem({
   const { colors } = useTheme()
 
   return (
-    <Component testID="RNE__ListItem" {...rest} onPress={onPress} onLongPress={onLongPress} disabled={disabled}>
+    <Component
+      testID="RNE__ListItem"
+      {...rest}
+      onPress={onPress}
+      onLongPress={onLongPress}
+      disabled={disabled}
+    >
       <PadView
         Component={ViewComponent}
         style={StyleSheet.flatten([
@@ -108,7 +114,11 @@ function ListItemTitle({
   return (
     <Text
       testID="RNE__ListItem__Title"
-      style={StyleSheet.flatten([styles.title, right && styles.rightTitle, style])}
+      style={StyleSheet.flatten([
+        styles.title,
+        right && styles.rightTitle,
+        style,
+      ])}
       size={size}
       {...rest}
     >
@@ -132,10 +142,21 @@ function ListItemSubtitle({ style, children, ...props }: TextProps) {
   )
 }
 
-function ListItemContent({ style, right, children, ...rest }: TextProps & { right?: boolean }) {
-  const containerStyle = right ? styles.contentRightContainer : styles.contentContainer
+function ListItemContent({
+  style,
+  right,
+  children,
+  ...rest
+}: TextProps & { right?: boolean }) {
+  const containerStyle = right
+    ? styles.contentRightContainer
+    : styles.contentContainer
   return (
-    <View testID="RNE__ListItem__Content" style={StyleSheet.flatten([containerStyle, style])} {...rest}>
+    <View
+      testID="RNE__ListItem__Content"
+      style={StyleSheet.flatten([containerStyle, style])}
+      {...rest}
+    >
       {children}
     </View>
   )
@@ -172,7 +193,11 @@ function PadView({
     <Container testID="RNE__PadView" {...rest} ref={_root}>
       {React.Children.map(
         children,
-        (child, index) => child && [child, index !== length - 1 && <View style={{ paddingLeft: pad }} />]
+        (child, index) =>
+          child && [
+            child,
+            index !== length - 1 && <View style={{ paddingLeft: pad }} />,
+          ]
       )}
     </Container>
   )

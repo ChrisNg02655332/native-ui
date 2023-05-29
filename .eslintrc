@@ -1,6 +1,6 @@
 {
   "root": true,
-    "extends": [
+  "extends": [
     "@react-native-community",
     "prettier"
   ],

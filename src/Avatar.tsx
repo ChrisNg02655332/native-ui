@@ -90,7 +90,9 @@ function Avatar({
   onLongPress,
   onPressIn,
   onPressOut,
-  Component = onPress || onLongPress || onPressIn || onPressOut ? TouchableOpacity : View,
+  Component = onPress || onLongPress || onPressIn || onPressOut
+    ? TouchableOpacity
+    : View,
   containerStyle,
   icon,
   iconStyle,
@@ -110,18 +112,24 @@ function Avatar({
   ...rest
 }: React.PropsWithChildren<AvatarProps> & { Accessory?: typeof Accessory }) {
   const { avatarSizes } = useTheme()
-  const width = typeof size === 'number' ? size : avatarSizes[size] || avatarSizes.small
+  const width =
+    typeof size === 'number' ? size : avatarSizes[size] || avatarSizes.small
 
   const height = width
   const titleSize = width / 2
   const iconSize = width / 2
 
   const PlaceholderContent =
-    (renderPlaceholderContent && renderNode(undefined, renderPlaceholderContent)) ||
+    (renderPlaceholderContent &&
+      renderNode(undefined, renderPlaceholderContent)) ||
     (title && (
       <Text
         testID="RNE__Avatar__Placeholder__Title"
-        style={StyleSheet.flatten([styles.title, { fontSize: titleSize }, titleStyle])}
+        style={StyleSheet.flatten([
+          styles.title,
+          { fontSize: titleSize },
+          titleStyle,
+        ])}
       >
         {title}
       </Text>
@@ -170,13 +178,20 @@ function Avatar({
     >
       <Image
         testID="RNE__Avatar__Image"
-        placeholderStyle={StyleSheet.flatten([placeholderStyle, hidePlaceholder && styles.hiddenPlaceholderStyle])}
+        placeholderStyle={StyleSheet.flatten([
+          placeholderStyle,
+          hidePlaceholder && styles.hiddenPlaceholderStyle,
+        ])}
         PlaceholderContent={PlaceholderContent}
         containerStyle={imageContainerStyle as StyleProp<TextStyle>}
         source={source}
         borderRadius={rounded ? width / 2 : undefined}
         {...imageProps}
-        style={StyleSheet.flatten([styles.avatar, imageProps && imageProps.style, avatarStyle])}
+        style={StyleSheet.flatten([
+          styles.avatar,
+          imageProps && imageProps.style,
+          avatarStyle,
+        ])}
         ImageComponent={ImageComponent}
       />
       {children}

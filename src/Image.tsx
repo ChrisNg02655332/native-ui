@@ -46,7 +46,9 @@ export function Image({
   onLongPress,
   onPressIn,
   onPressOut,
-  Component = onPress || onLongPress || onPressIn || onPressOut ? Pressable : View,
+  Component = onPress || onLongPress || onPressIn || onPressOut
+    ? Pressable
+    : View,
   containerStyle,
   childrenContainerStyle = null,
   style = {},
@@ -91,7 +93,10 @@ export function Image({
         style={StyleSheet.flatten([StyleSheet.absoluteFill, style])}
       />
       {/* Children for Image */}
-      <View testID="RNE__Image__children__container" style={childrenContainerStyle ?? style}>
+      <View
+        testID="RNE__Image__children__container"
+        style={childrenContainerStyle ?? style}
+      >
         {children}
       </View>
     </Component>

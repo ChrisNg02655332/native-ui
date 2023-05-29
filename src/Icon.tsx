@@ -145,7 +145,9 @@ function Icon({
   onLongPress,
   onPressIn,
   onPressOut,
-  Component = onPress || onLongPress || onPressIn || onPressOut ? Pressable : View,
+  Component = onPress || onLongPress || onPressIn || onPressOut
+    ? Pressable
+    : View,
 
   pressableProps,
   ...rest
@@ -182,7 +184,10 @@ function Icon({
       >
         <IconComponent
           testID="RNE__ICON__Component"
-          style={StyleSheet.flatten([{ backgroundColor: 'transparent' }, iconStyle && iconStyle])}
+          style={StyleSheet.flatten([
+            { backgroundColor: 'transparent' },
+            iconStyle && iconStyle,
+          ])}
           size={size}
           name={name}
           color={color || colors.primary[500]}

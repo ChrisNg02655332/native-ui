@@ -26,7 +26,10 @@ const positionStyle = {
   right: 'row-reverse',
 }
 
-const defaultLoadingProps = (type: 'solid' | 'clear' | 'outline', theme: Theme): ActivityIndicatorProps => ({
+const defaultLoadingProps = (
+  type: 'solid' | 'clear' | 'outline',
+  theme: Theme
+): ActivityIndicatorProps => ({
   color: type === 'solid' ? 'white' : theme.colors.primary[500],
   size: 'small',
 })
@@ -112,7 +115,11 @@ function ButtonComp({
   return (
     <View
       testID="RNE__Button__Container"
-      style={[styles.container, containerStyle, raised && !disabled && type !== 'clear' && styles.raised]}
+      style={[
+        styles.container,
+        containerStyle,
+        raised && !disabled && type !== 'clear' && styles.raised,
+      ]}
     >
       <Pressable
         disabled={loading || disabled}
@@ -130,10 +137,13 @@ function ButtonComp({
             {
               // flex direction based on iconPosition
               // if iconRight is true, default to right
-              flexDirection: (positionStyle as any)[iconRight ? 'right' : iconPosition] || 'row',
+              flexDirection:
+                (positionStyle as any)[iconRight ? 'right' : iconPosition] ||
+                'row',
             },
             {
-              backgroundColor: type === 'solid' ? theme.colors.primary[500] : 'transparent',
+              backgroundColor:
+                type === 'solid' ? theme.colors.primary[500] : 'transparent',
               borderColor: theme.colors.primary[500],
               borderWidth: type === 'outline' ? StyleSheet.hairlineWidth : 0,
             },

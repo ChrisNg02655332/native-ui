@@ -1,6 +1,12 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { Text as RNText, TextProps as RNTextProps, Dimensions, Platform, PixelRatio } from 'react-native'
+import {
+  Text as RNText,
+  TextProps as RNTextProps,
+  Dimensions,
+  Platform,
+  PixelRatio,
+} from 'react-native'
 import { useTheme } from './context'
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window')
@@ -88,7 +94,10 @@ export function Text({
   return (
     <RNText
       testID="RNE__TEXT"
-      style={StyleSheet.flatten([style, { ...styles[fontWeight], fontSize, color: color || colors.text }])}
+      style={StyleSheet.flatten([
+        style,
+        { ...styles[fontWeight], fontSize, color: color || colors.text },
+      ])}
       {...rest}
     >
       {children}
