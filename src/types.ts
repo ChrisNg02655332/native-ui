@@ -1,4 +1,6 @@
-export type IconType =
+import type { LiteralUnion } from 'type-fest'
+
+export type IconType = LiteralUnion<
   | 'material'
   | 'material-community'
   | 'simple-line-icon'
@@ -13,5 +15,6 @@ export type IconType =
   | 'font-awesome-5'
   | 'feather'
   | 'ant-design'
-  | 'fontisto'
-  | string /** This type is using for custom icon */
+  | 'fontisto',
+  string
+>

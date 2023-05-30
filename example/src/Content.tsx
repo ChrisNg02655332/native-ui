@@ -1,4 +1,4 @@
-import { Badge, Divider, Icon, Image, Spacer, Text, useTheme } from 'native-uikit'
+import { Badge, Divider,  Image, Spacer, Text, useTheme } from 'native-uikit'
 import React from 'react'
 import { View } from 'react-native'
 
@@ -45,7 +45,7 @@ export function Content() {
         }}
         value="Default"
       />
-      <Icon type="" name="" />
+
     </View>
   )
 }
