@@ -14,3 +14,4 @@ export type IconType =
   | 'feather'
   | 'ant-design'
   | 'fontisto'
+  | string /** This type is using for custom icon */
