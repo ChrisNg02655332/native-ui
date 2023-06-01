@@ -78,16 +78,16 @@ export function Text({
 
   switch (fontWeight) {
     case 'bold':
-      styles.bold = { fontFamily: fontFamily?.bold, fontWeight: 'bold' }
+      styles.bold = { fontFamily: fontFamily?.bold }
       break
     case 'medium':
-      styles.medium = { fontFamily: fontFamily?.medium, fontWeight: 500 }
+      styles.medium = { fontFamily: fontFamily?.medium }
       break
     case 'semibold':
-      styles.semibold = { fontFamily: fontFamily?.semibold, fontWeight: 600 }
+      styles.semibold = { fontFamily: fontFamily?.semibold }
       break
     default:
-      styles.normal = { fontFamily: fontFamily?.regular, fontWeight: 400 }
+      styles.normal = { fontFamily: fontFamily?.regular }
       break
   }
 
