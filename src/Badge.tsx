@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   View,
-  Text,
   StyleSheet,
   StyleProp,
   ViewStyle,
@@ -12,6 +11,8 @@ import {
 import type { InlinePressableProps } from './helpers'
 
 import renderNode from './renderNode'
+
+import { Text } from './Text'
 
 export { Badge, type BadgeProps }
 
