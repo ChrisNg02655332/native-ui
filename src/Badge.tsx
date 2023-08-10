@@ -71,7 +71,6 @@ function Badge({
     size: textStyle?.fontSize || size,
     color: textStyle?.color || 'white',
     ...textProps,
-    ...textProps,
   })
 
   return (
