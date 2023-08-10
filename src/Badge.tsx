@@ -1,17 +1,10 @@
 import React from 'react'
-import {
-  View,
-  Text,
-  StyleSheet,
-  StyleProp,
-  ViewStyle,
-  TextProps,
-  TextStyle,
-  Pressable,
-} from 'react-native'
+import { View, StyleSheet, StyleProp, ViewStyle, TextProps, TextStyle, Pressable } from 'react-native'
 import type { InlinePressableProps } from './helpers'
 
 import renderNode from './renderNode'
+
+import { Text } from './Text'
 
 export { Badge, type BadgeProps }
 
@@ -53,18 +46,13 @@ function Badge({
   onLongPress,
   onPressOut,
   onPressIn,
-  Component = onPress || onLongPress || onPressIn || onPressOut
-    ? Pressable
-    : View,
+  Component = onPress || onLongPress || onPressIn || onPressOut ? Pressable : View,
   value,
   pressableProps,
   size = 'normal',
   ...rest
 }: BadgeProps) {
-  const textStyle: StyleProp<TextStyle> = StyleSheet.flatten([
-    styles.text,
-    passedTitleStyle,
-  ])
+  const textStyle: StyleProp<TextStyle> = StyleSheet.flatten([styles.text, passedTitleStyle])
   const element = renderNode(Text, value, {
     style: { ...textStyle },
     size: textStyle?.fontSize || size,
@@ -74,10 +62,7 @@ function Badge({
   })
 
   return (
-    <View
-      testID="RNE__Badge__Container"
-      style={StyleSheet.flatten([containerStyle && containerStyle])}
-    >
+    <View testID="RNE__Badge__Container" style={StyleSheet.flatten([containerStyle && containerStyle])}>
       <Component
         {...{
           onPress,
