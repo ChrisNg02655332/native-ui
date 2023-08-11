@@ -68,7 +68,7 @@ function Badge({
   const element = renderNode(Text, value, {
     style: { ...textStyle },
     size: textStyle?.fontSize || size,
-    color: textProps?.color || textStyle?.color || 'white',
+    color: textProps?.color || textStyle?.color || 'black',
     ...textProps,
   })
 
