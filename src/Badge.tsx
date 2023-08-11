@@ -4,7 +4,6 @@ import {
   StyleSheet,
   StyleProp,
   ViewStyle,
-  TextProps,
   TextStyle,
   Pressable,
 } from 'react-native'
@@ -12,7 +11,7 @@ import type { InlinePressableProps } from './helpers'
 
 import renderNode from './renderNode'
 
-import { Text } from './Text'
+import { Text, TextProps } from './Text'
 
 export { Badge, type BadgeProps }
 
@@ -69,7 +68,7 @@ function Badge({
   const element = renderNode(Text, value, {
     style: { ...textStyle },
     size: textStyle?.fontSize || size,
-    color: textStyle?.color || 'white',
+    color: textProps?.color || textStyle?.color || 'white',
     ...textProps,
   })
 
